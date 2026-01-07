@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Aurea State — imóveis de alto padrão com curadoria, discrição e atendimento consultivo. Descubra a coleção e agende uma consulta exclusiva." />
+  <title>Aurea State — Imobiliária de Alto Padrão</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aurea State — Imobiliária de Alto Padrão" />
+  <meta property="og:description" content="Curadoria exclusiva de imóveis premium. Atendimento discreto e consultivo. Agende uma consulta." />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <!-- Cursor (opcional, aparece só se JS habilitado) -->
+  <div class="lux-cursor" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" data-reveal="fade">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Aurea State">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">AUREA <em>STATE</em></span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#colecao" class="nav__link">Coleção</a>
+        <a href="#diferenciais" class="nav__link">Diferenciais</a>
+        <a href="#provasocial" class="nav__link">Prova Social</a>
+        <a href="#contato" class="nav__link">Contato</a>
+      </nav>
+
+      <div class="header__cta">
+        <a class="btn btn--ghost" href="#colecao" data-cursor="hover">Descubra a Coleção</a>
+        <a class="btn btn--primary" href="#contato" data-cursor="cta">Agende uma Consulta</a>
+        <button class="burger" aria-label="Abrir menu" aria-expanded="false" data-burger>
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="mobile" data-mobile hidden>
+      <div class="container mobile__inner">
+        <a href="#colecao" class="mobile__link">Coleção</a>
+        <a href="#diferenciais" class="mobile__link">Diferenciais</a>
+        <a href="#provasocial" class="mobile__link">Prova Social</a>
+        <a href="#contato" class="mobile__link">Contato</a>
+        <div class="mobile__actions">
+          <a class="btn btn--ghost" href="#colecao">Descubra a Coleção</a>
+          <a class="btn btn--primary" href="#contato">Agende uma Consulta</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO (história começa aqui) -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy" data-reveal="hero">
+          <p class="eyebrow">Curadoria imobiliária • Alto padrão • Discrição</p>
+          <h1 class="display">
+            Eleve o morar com uma
+            <span class="accent">coleção excepcional</span>
+            de residências.
+          </h1>
+          <p class="lead">
+            Na Aurea State, cada imóvel é selecionado por arquitetura, localização e potencial de valorização.
+            Um atendimento consultivo do primeiro contato à entrega das chaves — com excelência, calma e total transparência.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#colecao" data-cursor="cta">Descubra a Coleção</a>
+            <a class="btn btn--ghost btn--lg" href="#contato" data-cursor="hover">
+              Agende uma Consulta Exclusiva
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="hero__meta">
+            <div class="pill" data-reveal="fade">
+              <span class="pill__dot"></span>
+              Atendimento por consultores senior
+            </div>
+            <div class="pill" data-reveal="fade">
+              <span class="pill__dot"></span>
+              Visitas guiadas e tour sob demanda
+            </div>
+          </div>
+        </div>
+
+        <!-- Card visual (grid assimétrico) -->
+        <aside class="hero__visual" aria-label="Destaque da coleção">
+          <div class="visual" data-parallax="0.18">
+            <div class="visual__glass" data-reveal="fade">
+              <div class="visual__badge">
+                <span class="badge__num">07</span>
+                <span class="badge__txt">Coleções ativas</span>
+              </div>
+
+              <div class="visual__title">
+                <h3>Signature Residence</h3>
+                <p>Arquitetura contemporânea • vista ampla • privacidade</p>
+              </div>
+
+              <div class="visual__actions">
+                <a class="btn btn--chip" href="#colecao" data-cursor="hover">Ver detalhes</a>
+                <a class="btn btn--chip" href="#contato" data-cursor="cta">Solicitar tour</a>
+              </div>
+            </div>
+
+            <div class="visual__img" role="img" aria-label="Residência de luxo">
+              <!-- imagem via CSS (background) -->
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- faixa de marcas / confiança -->
+      <div class="container trust" data-reveal="fade">
+        <p>Confiança construída com discrição, método e resultado.</p>
+        <div class="trust__row" aria-label="Indicadores">
+          <div class="kpi">
+            <strong>35K+</strong><span>clientes atendidos</span>
+          </div>
+          <div class="kpi">
+            <strong>40K+</strong><span>unidades disponíveis</span>
+          </div>
+          <div class="kpi">
+            <strong>10K+</strong><span>unidades vendidas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APRESENTAÇÃO (produto/serviço + diferenciais) -->
+    <section class="section about" id="diferenciais">
+      <div class="container about__grid">
+
+        <div class="about__media" data-reveal="left">
+          <div class="media-card" data-parallax="0.12">
+            <div class="media-card__img" role="img" aria-label="Casa premium"></div>
+            <div class="media-card__cap">
+              <span class="tag">Curadoria premium</span>
+              <span class="tag">Análise de valorização</span>
+              <span class="tag">Documentação assistida</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__copy" data-reveal="right">
+          <p class="eyebrow">Diferenciais Aurea State</p>
+          <h2 class="title">
+            Excelência que se sente nos detalhes —
+            <span class="accent">e na tranquilidade</span> do processo.
+          </h2>
+          <p class="text">
+            Comprar, vender ou investir em alto padrão exige mais do que “opções”.
+            Exige critério, segurança e um acompanhamento que antecipa riscos.
+            Nossa abordagem é consultiva: entendemos o seu momento e apresentamos apenas o que realmente faz sentido.
+          </p>
+
+          <div class="features">
+            <div class="feature" data-reveal="fade">
+              <h3>Seleção com propósito</h3>
+              <p>Imóveis avaliados por padrão construtivo, localização e potencial de valorização.</p>
+            </div>
+            <div class="feature" data-reveal="fade">
+              <h3>Discrição e agilidade</h3>
+              <p>Atendimento reservado, agenda inteligente e condução cuidadosa em cada etapa.</p>
+            </div>
+            <div class="feature" data-reveal="fade">
+              <h3>Experiência completa</h3>
+              <p>Do tour ao contrato: suporte com documentação, prazos e negociações.</p>
+            </div>
+          </div>
+
+          <div class="about__actions">
+            <a class="btn btn--primary" href="#contato" data-cursor="cta">Agende uma Consulta Exclusiva</a>
+            <a class="link" href="#colecao" data-cursor="hover">Explorar coleções disponíveis →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLEÇÃO (grid assimétrico moderno) -->
+    <section class="section collection" id="colecao">
+      <div class="container">
+        <div class="section__head" data-reveal="fade">
+          <div>
+            <p class="eyebrow">Coleções em destaque</p>
+            <h2 class="title">Onde sonhos ganham um endereço global.</h2>
+          </div>
+          <div class="section__headRight">
+            <p class="text text--muted">
+              Uma seleção de imóveis com estética, funcionalidade e localização que valorizam ao longo do tempo.
+            </p>
+            <a class="btn btn--ghost" href="#contato" data-cursor="hover">Receber curadoria personalizada</a>
+          </div>
+        </div>
+
+        <div class="cards">
+          <!-- Card grande (assimetria) -->
+          <article class="card card--xl" data-reveal="up" data-cursor="hover">
+            <div class="card__img card__img--a" aria-hidden="true"></div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>Harmony Haven</h3>
+                <span class="chip">Signature</span>
+              </div>
+              <p class="text">
+                Linhas contemporâneas, luz natural e privacidade absoluta.
+                Perfeita para quem deseja exclusividade com conforto inteligente.
+              </p>
+              <div class="card__meta">
+                <span>4 suítes</span><span>3 vagas</span><span>Vista panorâmica</span>
+              </div>
+              <a href="#contato" class="btn btn--chip" data-cursor="cta">Solicitar visita guiada</a>
+            </div>
+          </article>
+
+          <article class="card" data-reveal="up" data-cursor="hover">
+            <div class="card__img card__img--b" aria-hidden="true"></div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>Blissful Gardens</h3>
+                <span class="chip">Family</span>
+              </div>
+              <p class="text">Ambientes amplos, jardim integrado e acabamento refinado para uma rotina leve.</p>
+              <div class="card__meta"><span>3 suítes</span><span>Área gourmet</span><span>Condomínio</span></div>
+              <a href="#contato" class="btn btn--chip" data-cursor="cta">Agendar tour</a>
+            </div>
+          </article>
+
+          <article class="card" data-reveal="up" data-cursor="hover">
+            <div class="card__img card__img--c" aria-hidden="true"></div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3>Tranquil Heights</h3>
+                <span class="chip">View</span>
+              </div>
+              <p class="text">Vista elevada, design minimalista e acabamentos premium com estética atemporal.</p>
+              <div class="card__meta"><span>2 suítes</span><span>Varanda</span><span>Alta valorização</span></div>
+              <a href="#contato" class="btn btn--chip" data-cursor="cta">Quero conhecer</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL (depoimentos) -->
+    <section class="section social" id="provasocial">
+      <div class="container social__grid">
+        <div class="social__copy" data-reveal="left">
+          <p class="eyebrow">Prova social</p>
+          <h2 class="title">
+            Confiança não se promete —
+            <span class="accent">se constrói</span>.
+          </h2>
+          <p class="text">
+            Nosso compromisso é cuidar de cada decisão com a mesma seriedade que você cuida do seu patrimônio.
+            Veja o que clientes dizem sobre o processo com a Aurea State.
+          </p>
+
+          <div class="social__stats" data-reveal="fade">
+            <div class="mini">
+              <strong>4.9/5</strong><span>satisfação média</span>
+            </div>
+            <div class="mini">
+              <strong>72h</strong><span>tempo médio de curadoria</span>
+            </div>
+          </div>
+
+          <a class="btn btn--primary" href="#contato" data-cursor="cta">Quero minha curadoria</a>
+        </div>
+
+        <div class="quotes" data-reveal="right">
+          <article class="quote" data-cursor="hover">
+            <p>“A curadoria foi precisa. Em poucos dias, visitamos apenas imóveis que realmente faziam sentido.”</p>
+            <div class="quote__who">
+              <span class="avatar" aria-hidden="true"></span>
+              <div>
+                <strong>Marina A.</strong>
+                <span>Compra residencial</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="quote" data-cursor="hover">
+            <p>“Processo leve e seguro. A equipe antecipou riscos e cuidou de toda a documentação.”</p>
+            <div class="quote__who">
+              <span class="avatar" aria-hidden="true"></span>
+              <div>
+                <strong>Ricardo S.</strong>
+                <span>Investimento</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="quote" data-cursor="hover">
+            <p>“Atendimento discreto, elegante e objetivo. Uma experiência realmente premium.”</p>
+            <div class="quote__who">
+              <span class="avatar" aria-hidden="true"></span>
+              <div>
+                <strong>Camila R.</strong>
+                <span>Venda e compra</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTOR (CTA forte final + história fecha) -->
+    <section class="section concierge" id="contato">
+      <div class="container concierge__grid">
+        <div class="concierge__card" data-reveal="fade" data-parallax="0.10">
+          <div class="concierge__copy">
+            <p class="eyebrow">Consulta exclusiva</p>
+            <h2 class="title">Sua próxima decisão pode ser elegante e simples.</h2>
+            <p class="text">
+              Diga o que você busca (compra, venda ou investimento) e nós retornamos com uma curadoria sob medida.
+              Sem pressão, sem ruído — apenas clareza e opções relevantes.
+            </p>
+
+            <form class="form" action="#" method="post">
+              <label class="field">
+                <span>Seu nome</span>
+                <input type="text" name="nome" placeholder="Ex: Hebert" autocomplete="name" />
+              </label>
+
+              <label class="field">
+                <span>WhatsApp</span>
+                <input type="tel" name="whats" placeholder="(21) 9xxxx-xxxx" autocomplete="tel" />
+              </label>
+
+              <label class="field field--full">
+                <span>O que você procura?</span>
+                <select name="objetivo">
+                  <option>Compra residencial</option>
+                  <option>Investimento</option>
+                  <option>Venda do meu imóvel</option>
+                  <option>Locação premium</option>
+                </select>
+              </label>
+
+              <div class="form__actions">
+                <button type="submit" class="btn btn--primary btn--lg" data-cursor="cta">
+                  Enviar e receber curadoria
+                </button>
+                <p class="fineprint">Ao enviar, você concorda em receber contato da Aurea State. Sem spam.</p>
+              </div>
+            </form>
+          </div>
+
+          <div class="concierge__visual" aria-label="Especialista">
+            <div class="consultant" data-reveal="up">
+              <div class="consultant__img" aria-hidden="true"></div>
+              <div class="consultant__info">
+                <strong>Especialista Aurea</strong>
+                <span>Atendimento consultivo • 8+ anos</span>
+              </div>
+              <a class="btn btn--ghost" href="#colecao" data-cursor="hover">Ver imóveis agora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <div class="brand brand--footer">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__name">AUREA <em>STATE</em></span>
+          </div>
+          <p class="text text--muted">
+            Curadoria imobiliária de alto padrão. Discrição, método e excelência.
+          </p>
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h4>Contato</h4>
+            <a href="#contato">Agendar consulta</a>
+            <a href="#colecao">Coleções</a>
+          </div>
+          <div>
+            <h4>Endereço</h4>
+            <p class="text text--muted">Av. Atlântica, 780 • Rio de Janeiro</p>
+            <p class="text text--muted">Seg–Sex • 9h às 18h</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p>© <span id="year"></span> Aurea State. Todos os direitos reservados.</p>
+        <p class="text text--muted">UX • Interface premium • Versão Luxury</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
