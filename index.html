@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Aurea State — Imobiliária de Alto Padrão" />
@@ -84,6 +84,10 @@
               Agende uma Consulta Exclusiva
               <span class="btn__icon" aria-hidden="true">↗</span>
             </a>
+            <button class="btn btn--ghost btn--lg video-trigger" data-video-open data-cursor="hover">
+  ▶ Assista ao Manifesto
+</button>
+
           </div>
 
           <div class="hero__meta">
@@ -209,7 +213,7 @@
           </div>
         </div>
 
-        <div class="cards">
+        <div class="cards cards--slider" data-slider>
           <!-- Card grande (assimetria) -->
           <article class="card card--xl" data-reveal="up" data-cursor="hover">
             <div class="card__img card__img--a" aria-hidden="true"></div>
@@ -406,12 +410,30 @@
 
       <div class="container footer__bottom">
         <p>© <span id="year"></span> Aurea State. Todos os direitos reservados.</p>
-        <p class="text text--muted">UX • Interface premium • Versão Luxury</p>
+        <p class="text text--muted">Desenvolvido por Hebert Matheus</p>
       </div>
     </footer>
 
   </main>
 
   <script src="script.js"></script>
+  <div class="video-modal" data-video-modal hidden>
+  <div class="video-backdrop" data-video-close></div>
+
+  <div class="video-container" role="dialog" aria-modal="true">
+    <button class="video-close" data-video-close aria-label="Fechar vídeo">✕</button>
+
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&rel=0"
+        title="Aurea State Manifesto"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

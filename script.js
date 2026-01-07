@@ -127,3 +127,51 @@
     });
   }
 })();
+/* =========================
+   Video Modal
+   ========================= */
+const videoModal = document.querySelector("[data-video-modal]");
+const openVideo = document.querySelector("[data-video-open]");
+const closeVideoEls = document.querySelectorAll("[data-video-close]");
+
+if (videoModal && openVideo) {
+  openVideo.addEventListener("click", () => {
+    videoModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  });
+
+  closeVideoEls.forEach(el =>
+    el.addEventListener("click", () => {
+      videoModal.hidden = true;
+      document.body.style.overflow = "";
+      const iframe = videoModal.querySelector("iframe");
+      iframe.src = iframe.src; // stop video
+    })
+  );
+}
+/* =========================
+   Drag Slider (Mobile)
+   ========================= */
+document.querySelectorAll("[data-slider]").forEach(slider => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener("mousedown", e => {
+    isDown = true;
+    slider.classList.add("dragging");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener("mouseleave", () => isDown = false);
+  slider.addEventListener("mouseup", () => isDown = false);
+
+  slider.addEventListener("mousemove", e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+});
