@@ -588,6 +588,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .card__top{
   display:flex;
+  flex-wrap: wrap;
   align-items:center;
   justify-content: space-between;
   gap: 12px;
@@ -736,6 +737,7 @@ input, select{
   border: 1px solid rgba(14,23,26,0.12);
   background: rgba(255,255,255,0.86);
   font-family: var(--font-body);
+  font-size: 16px;
   transition: border-color .25s var(--ease), transform .25s var(--ease);
 }
 input:hover, select:hover{ border-color: rgba(199,178,124,0.34); }
@@ -886,12 +888,17 @@ input:focus, select:focus{ border-color: rgba(199,178,124,0.55); }
   }
   .nav{ display: none; }
   .burger{ display: inline-grid; place-items: center; }
+  .header__cta .btn--ghost{ display: none; }
+  .mobile__actions{ grid-template-columns: 1fr; }
 
   .hero__grid{
     grid-template-columns: 1fr;
     gap: 22px;
   }
   .visual__img{ height: 460px; }
+  .trust__row{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
 
   .section__head{
     grid-template-columns: 1fr;
@@ -925,14 +932,51 @@ input:focus, select:focus{ border-color: rgba(199,178,124,0.55); }
   .container{ width: min(var(--container), calc(100% - 32px)); }
   .header__cta .btn{ display: none; }
   .mobile__actions{ grid-template-columns: 1fr; }
+  .section{ padding: 64px 0; }
+  .hero{ padding: 64px 0 28px; }
+  .display{ font-size: clamp(32px, 9vw, 40px); }
+  .lead{ font-size: 16px; }
+
+  .hero__actions,
+  .about__actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero__actions .btn,
+  .about__actions .btn,
+  .mobile__actions .btn,
+  .form__actions .btn{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  .visual__img{ height: 340px; }
+  .media-card__img{ height: 360px; }
+  .card__img{ height: 200px; }
 
   .trust__row{
     grid-template-columns: 1fr;
   }
+  .social__stats{
+    flex-direction: column;
+    align-items: stretch;
+  }
   .form{
     grid-template-columns: 1fr;
   }
+  .concierge__card{
+    padding: 18px;
+    border-radius: 26px;
+  }
+  .concierge__copy{ padding: 4px; }
+  .consultant{ max-width: 100%; }
+  .consultant__img{ height: 180px; }
   .footer__grid{
+    grid-template-columns: 1fr;
+  }
+  .footer__cols{
     grid-template-columns: 1fr;
   }
   .footer__bottom{
@@ -1002,7 +1046,17 @@ input:focus, select:focus{ border-color: rgba(199,178,124,0.55); }
     gap: 18px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding: 24px;
     padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    cursor: grab;
+  }
+
+  .cards--slider.dragging{
+    cursor: grabbing;
+    scroll-snap-type: none;
   }
 
   .cards--slider::-webkit-scrollbar{
@@ -1012,6 +1066,7 @@ input:focus, select:focus{ border-color: rgba(199,178,124,0.55); }
   .cards--slider .card{
     min-width: 85%;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     flex-shrink: 0;
   }
 

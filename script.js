@@ -150,28 +150,120 @@ if (videoModal && openVideo) {
   );
 }
 /* =========================
-   Drag Slider (Mobile)
+   Slider (Mobile / Touch)
    ========================= */
-document.querySelectorAll("[data-slider]").forEach(slider => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  slider.addEventListener("mousedown", e => {
+document.querySelectorAll("[data-slider]").forEach((slider) => {
+  const slides = [...slider.querySelectorAll(".card")];
+  if (slides.length < 2) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  let autoTimer = null;
+  let resumeTimer = null;
+  let isAutoScrolling = false;
+
+  const getClosestIndex = () => {
+    let closest = 0;
+    let min = Infinity;
+    slides.forEach((slide, index) => {
+      const diff = Math.abs(slide.offsetLeft - slider.scrollLeft);
+      if (diff < min) {
+        min = diff;
+        closest = index;
+      }
+    });
+    return closest;
+  };
+
+  const scrollToIndex = (index) => {
+    const target = slides[index];
+    if (!target) return;
+    slider.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+  };
+
+  const stopAuto = () => {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  };
+
+  const startAuto = () => {
+    if (prefersReducedMotion) return;
+    if (!window.matchMedia("(max-width: 980px)").matches) return;
+    if (autoTimer) return;
+
+    autoTimer = setInterval(() => {
+      const next = (getClosestIndex() + 1) % slides.length;
+      isAutoScrolling = true;
+      scrollToIndex(next);
+      setTimeout(() => {
+        isAutoScrolling = false;
+      }, 600);
+    }, 4500);
+  };
+
+  const scheduleResume = () => {
+    if (prefersReducedMotion) return;
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(startAuto, 5000);
+  };
+
+  slider.addEventListener("mousedown", (e) => {
     isDown = true;
     slider.classList.add("dragging");
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
+    stopAuto();
   });
 
-  slider.addEventListener("mouseleave", () => isDown = false);
-  slider.addEventListener("mouseup", () => isDown = false);
+  slider.addEventListener("mouseleave", () => {
+    if (!isDown) return;
+    isDown = false;
+    slider.classList.remove("dragging");
+    scheduleResume();
+  });
 
-  slider.addEventListener("mousemove", e => {
+  slider.addEventListener("mouseup", () => {
+    if (!isDown) return;
+    isDown = false;
+    slider.classList.remove("dragging");
+    scheduleResume();
+  });
+
+  slider.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) * 1.2;
     slider.scrollLeft = scrollLeft - walk;
   });
+
+  slider.addEventListener("touchstart", () => {
+    stopAuto();
+  }, { passive: true });
+
+  slider.addEventListener("touchend", () => {
+    scheduleResume();
+  }, { passive: true });
+
+  slider.addEventListener("touchcancel", () => {
+    scheduleResume();
+  }, { passive: true });
+
+  slider.addEventListener("scroll", () => {
+    if (isAutoScrolling) return;
+    stopAuto();
+    scheduleResume();
+  }, { passive: true });
+
+  window.addEventListener("resize", () => {
+    stopAuto();
+    startAuto();
+  });
+
+  startAuto();
 });
